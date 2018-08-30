@@ -2,7 +2,6 @@
 class Queue {
     constructor() {
         this.list = [];
-        this.head = 0;
         this.tail = 0;
     }
 
@@ -12,15 +11,14 @@ class Queue {
     }
 
     dequeue() {
-        const element = this.list[this.head];
+        const element = this.list[0];
         this.list.shift();
         if (!element) return;
-        this.head++;
         return element;
     }
 
     size() {
-        return this.tail - this.head;
+        return this.tail;
     }
 
     peek() {
@@ -52,3 +50,14 @@ class QueueLinkedList {
         return this.list.size();
     }
 }
+
+let myQ = new Queue();
+myQ.enqueue(1);
+myQ.enqueue(2);
+myQ.enqueue(3);
+
+console.log(myQ.dequeue());
+console.log(myQ.dequeue());
+
+console.log(myQ.dequeue());
+

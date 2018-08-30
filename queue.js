@@ -13,6 +13,7 @@ class Queue {
 
     dequeue() {
         const element = this.list[this.head];
+        this.list.shift();
         if (!element) return;
         this.head++;
         return element;
@@ -20,6 +21,17 @@ class Queue {
 
     size() {
         return this.tail - this.head;
+    }
+
+    peek() {
+        return this.list[0];
+    }
+
+    show() {
+        return this.list;
+    }
+    isEmpty(){
+        return this.size() === 0;
     }
 }
 
